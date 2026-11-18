@@ -17,10 +17,12 @@ const accountName = document.querySelector("#accountName");
 
 function textCell(value) {
   const cell = document.createElement("td");
-  String(value ?? "").split("|").forEach((part, index) => {
-    if (index) cell.appendChild(document.createElement("br"));
-    cell.append(document.createTextNode(part));
-  });
+  String(value ?? "")
+    .split("|")
+    .forEach((part, index) => {
+      if (index) cell.appendChild(document.createElement("br"));
+      cell.append(document.createTextNode(part));
+    });
   return cell;
 }
 
@@ -95,12 +97,16 @@ function showView(viewName) {
   portfolioView.classList.toggle("hidden", !showPortfolio);
   formView.classList.toggle("hidden", showPortfolio);
   pageTitle.textContent = showPortfolio ? "Portfolio" : "Form";
-  navLinks.forEach((link) => link.classList.toggle("active", link.dataset.view === viewName));
+  navLinks.forEach((link) =>
+    link.classList.toggle("active", link.dataset.view === viewName),
+  );
   window.location.hash = viewName;
 }
 
 function updateStatusCopy() {
-  statusHelp.textContent = statusInput.checked ? "Admitted to the second stage" : "Not admitted to the second stage";
+  statusHelp.textContent = statusInput.checked
+    ? "Admitted to the second stage"
+    : "Not admitted to the second stage";
   statusHelp.classList.toggle("is-admitted", statusInput.checked);
 }
 
@@ -129,10 +135,12 @@ function startEdit(id) {
   entryForm.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-navLinks.forEach((link) => link.addEventListener("click", (event) => {
-  event.preventDefault();
-  showView(link.dataset.view);
-}));
+navLinks.forEach((link) =>
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    showView(link.dataset.view);
+  }),
+);
 
 statusInput.addEventListener("change", updateStatusCopy);
 cancelEdit.addEventListener("click", resetForm);
