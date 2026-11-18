@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Doors — Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="brand-row">
+        <img class="brand" src="logo-a-2026.svg" alt="Open Doors" />
+        <span class="collapse-mark" aria-hidden="true">❮</span>
+      </div>
+
+      <nav class="side-nav">
+        <a class="nav-link active" href="#portfolio" data-view="portfolio">
+          <span class="nav-icon person-icon" aria-hidden="true"></span>
+          <span>Portfolio</span>
+        </a>
+        <a class="nav-link" href="#form" data-view="form">
+          <span class="nav-icon form-icon" aria-hidden="true">▤</span>
+          <span>Form</span>
+        </a>
+      </nav>
+
+      <div class="account-card">
+        <span class="profile-photo" aria-hidden="true"></span>
+        <span class="account-name" id="accountName">Ghafari Nawid</span>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <h1 id="pageTitle">Portfolio</h1>
+        <div class="languages" aria-label="Languages">
+          <span>Ру</span><span class="language-current">En</span>
+        </div>
+      </header>
+
+      <section class="view" id="portfolioView">
+        <p class="crumb">
+          <a href="#portfolio">Personal Account</a><span>/</span
+          ><span>Portfolio</span>
+        </p>
+
+        <div class="notice" role="status">
+          <span class="sad-face" aria-hidden="true">☹</span>
+          <p>
+            Unfortunately, you weren’t selected for the Second stage in any
+            subject area. We thank you for participation, wish you good luck and
+            hope to see you among the Open Doors Scholarship Project
+            participants next year.
+          </p>
+        </div>
+
+        <div
+          id="portfolioTables"
+          class="portfolio-tables"
+          aria-live="polite"
+        ></div>
+      </section>
+
+      <section class="view hidden" id="formView">
+        <p class="crumb">
+          <a href="#portfolio">Personal Account</a><span>/</span
+          ><span>Form</span>
+        </p>
+        <form class="entry-form" id="entryForm">
+          <h2>Add portfolio entry</h2>
+          <div class="form-grid">
+            <label
+              >Person name<input
+                id="personName"
+                name="personName"
+                type="text"
+                placeholder="Enter name"
+                required
+            /></label>
+            <label
+              >Subject area, track<input
+                id="subject"
+                name="subject"
+                type="text"
+                placeholder="Enter subject area and track"
+                required
+            /></label>
+            <label
+              >Education documents<input
+                id="education"
+                name="education"
+                type="text"
+                placeholder="Enter education documents"
+                required
+            /></label>
+            <label
+              >Motivation letter<input
+                id="motivation"
+                name="motivation"
+                type="text"
+                placeholder="Enter motivation letter"
+                required
+            /></label>
+            <label
+              >Entry test<input
+                id="entryTest"
+                name="entryTest"
+                type="text"
+                placeholder="Enter entry test result"
+                required
+            /></label>
+            <label
+              >Your result for the First Stage<input
+                id="firstStage"
+                name="firstStage"
+                type="text"
+                placeholder="Enter first stage result"
+                required
+            /></label>
+          </div>
+          <div class="status-row">
+            <span>Status</span>
+            <label class="switch" aria-label="Admitted to the second stage">
+              <input id="status" name="status" type="checkbox" />
+              <span class="slider"></span>
+            </label>
+            <span class="status-help" id="statusHelp"
+              >Not admitted to the second stage</span
+            >
+          </div>
+          <div class="form-actions">
+            <button type="submit" id="saveButton">Save</button>
+            <button type="button" class="cancel-button hidden" id="cancelEdit">Cancel edit</button>
+          </div>
+        </form>
+        <section class="entry-manager" aria-labelledby="savedEntriesTitle">
+          <h2 id="savedEntriesTitle">Saved tables</h2>
+          <div id="entryManager"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="portfolioTableTemplate">
+      <article class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Subject area, track</th>
+              <th>Education documents</th>
+              <th>Motivation letter</th>
+              <th>Entry test</th>
+              <th>Your result for the First Stage</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr></tr>
+          </tbody>
+        </table>
+      </article>
+    </template>
+    <script src="script.js"></script>
+  </body>
+</html>
