@@ -77,6 +77,14 @@ body {
 .nav-link.active {
   color: #18241d;
 }
+.nav-static {
+  min-height: 43px;
+  margin: 0 11px 10px 58px;
+  color: #303930;
+  font-size: 17px;
+  line-height: 1.3;
+  cursor: default;
+}
 .nav-icon {
   color: #1e9fd7;
   flex: 0 0 24px;
